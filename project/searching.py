@@ -17,9 +17,11 @@ target = 110
 print(arr)
 result = linear_search(arr,target)
 if(result == -1): 
+    
     print("Element is not present in array") #should be at index 6
 else: 
-    print("Element is present at index", result)
+    
+    print(f"Your target element({target}) is present at index", result)
 
 
 
@@ -46,19 +48,38 @@ def binary_search(arr, target):
 
 
 arr = [ 2, 3, 4, 10, 40 ] 
-target = 10 # should be index 3
+target = 10 
 result = binary_search(arr,target)
 
 if result != -1:
-  print (f'Element is present at index {result}')
+  print(arr)
+  print (f'Your target element({target}) is present at index {result}')# should be index 3
 else:
   print('Element is not present in this array')
 
 # STRETCH: write a recursive implementation of Binary Search 
 def binary_search_recursive(arr, target, low, high):
   
-  middle = (low+high)/2
+  middle = int((low+high)/2)
 
   if len(arr) == 0:
     return -1 # array empty
   # TO-DO: add missing if/else statements, recursive calls
+  elif low <= high :
+    if arr[middle] == target:
+      return middle
+    elif arr[middle] > target:
+      high = middle -1
+    else:
+      low = middle + 1
+  
+arr = [ 2, 3, 4, 10, 40 ] 
+target = 4
+
+result = binary_search_recursive(arr, target, 0, len(arr)-1)
+
+if result != -1:
+  print(arr)
+  print (f'Your target element({target}) is present at index {result}')# should be index 2
+else:
+  print('Element is not present in this array')
