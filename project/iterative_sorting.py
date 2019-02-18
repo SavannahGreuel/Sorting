@@ -24,8 +24,23 @@ print(my_arr)
 
 # TO-DO: implement the Insertion Sort function below
 def insertion_sort( arr ):
+    # traverses 1 through length of array
+    for i in range(1,len(arr)):
+        key = arr[i]
+        
+        # Move elements of arr[0..i-1], that are 
+        # greater than key, to one position ahead 
+        # of their current position 
+        x = i-1
+        while x >=0 and key < arr[x]:
+           arr[x+1] = arr[x]
+           x -= 1
+        arr[x+1] = key
 
-    return arr
+arr = [54,26,93,17,77,31,44,55,20]
+print(arr)
+insertion_sort(arr)
+print(arr)
 
 
 # STRETCH: implement the Bubble Sort function below
