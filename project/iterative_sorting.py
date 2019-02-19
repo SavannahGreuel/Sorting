@@ -37,10 +37,12 @@ def insertion_sort( arr ):
            x -= 1
         arr[x+1] = key
 
+    return arr
+
 arr = [54,26,93,17,77,31,44,55,20]
-print(arr)
-insertion_sort(arr)
-print(arr)
+
+result = insertion_sort(arr)
+print(f'{result}')
 
 
 # STRETCH: implement the Bubble Sort function below
